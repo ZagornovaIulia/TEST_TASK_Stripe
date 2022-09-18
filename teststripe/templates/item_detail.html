@@ -1,0 +1,40 @@
+{% extends "include/base.html" %}
+{% load static %}
+
+{% block title %}Item{% endblock %}
+
+{% block header %}{% endblock %}
+{% block content %}
+<script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+<script src="{% static 'main.js' %}"></script>
+<script src="https://js.stripe.com/v3/"></script>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Product Detail</h2>
+        </div>
+        <div class="card-body">
+            <div class="container row">
+                <div class="col-md-2">
+                    <img src="https://dummyimage.com/150x150.gif?text={{ item.name }}" alt="">
+                </div>
+                <div class="col-md-10">
+                    <h1>Name: {{ item.name }}</h1>
+                    <p>Description: {{ item.description }}</p>
+                    <p>Price: {{ item.price }}</p>
+
+                    <div class="form-group">
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                        <small>Please enter your email address</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer d-flex">
+            <button class="btn btn-success ml-auto" id="checkout-button">Checkout</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
