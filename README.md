@@ -21,7 +21,7 @@ Python, Django, Git, Bootstrap, SQLite
 
  Создаем виртуальное окружение:
  
- ```$ python -m venv venv```
+ ```$ python -m venv venv```  и активируем его  ```$ venv/Scripts/activate```
  
  Устанавливаем зависимости:
 
