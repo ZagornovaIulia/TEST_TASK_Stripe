@@ -13,14 +13,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 
-STRIPE_PUBLISHABLE_KEY = 'pk_test_51LjKknKl3SmA72OTREyIPORWdmXRPsB5FtfO2Ho0xN3nqyaOMBiP2vup5CuMtCVGV7haSGCfkFoF4sWtajZswy5l00DvW6B8SR'
-STRIPE_SECRET_KEY = 'sk_test_51LjKknKl3SmA72OTBIa36QEqCZaEKYirrsFeBDdH8GcKWXutyfnE9ttRNAGkNIVMVgtnLRrL6MAHUKEhj2WyHwnC00E3YMfF2Q'
-STRIPE_ENDPOINT_SECRET = '<your webhook signing secret here>'
-
-#import environ
-# Initialise environment variables
-#env = environ.Env()
-# environ.Env.read_env()
+import environ
+env = environ.Env()
+environ.Env.read_env()
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -42,14 +37,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'adminlte3',
+    'adminlte3_theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'teststripe',
-    'about'
+    'about',
+    'shop',
+    'orders',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +76,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.cart',
             ],
         },
     },
@@ -137,3 +137,13 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+SITE_URL = 'http://127.0.0.1:8000/'
+
+
+STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
+
+CART_SESSION_ID = 'cart'

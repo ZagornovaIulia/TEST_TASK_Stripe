@@ -17,6 +17,3 @@ class Item(models.Model):
 
     def get_absolute_url(self):
         return reverse('item_detail', args=[self.id])
-
-    def get_display_price(self):
-        return "{0:.2f}".format(self.price / 100)
