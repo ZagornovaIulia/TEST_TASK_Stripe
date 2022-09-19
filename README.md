@@ -1,4 +1,4 @@
-# Тестовое задание с использованием Stripe
+# Тестовое задание с использованием Stripe ([Тех. задание](https://docs.google.com/document/d/1RqJhk-pRDuAk4pH1uqbY9-8uwAqEXB9eRQWLSMM_9sI/edit#))
 
 ## Описание
 в данном проекте реализованы показ всех товаров (но в данном случает модель Item), и оплата каждого item:
@@ -8,6 +8,14 @@
   ```GET http://localhost:8000/items``` - открываются все items
   
   ```GET http://localhost:8000/buy/1``` -  session id
+  
+   ```GET http://localhost:8000/orders``` -  Все заказы
+   
+Заказы связаны с моделью Item
+
+Добавлены переменные из .env файла. 
+
+В панеле администратора добавлена визуальная тема admin-lite3. 
 
 Так же добавлены модели Order, реализованы методы подсчета стоимости заказа с подсчетом стоимости каждой позиции
 
@@ -21,7 +29,7 @@ Python, Django, Git, Bootstrap, SQLite
 
  Создаем виртуальное окружение:
  
- ```$ python -m venv venv```
+ ```$ python -m venv venv```  и активируем его  ```$ venv/Scripts/activate```
  
  Устанавливаем зависимости:
 
