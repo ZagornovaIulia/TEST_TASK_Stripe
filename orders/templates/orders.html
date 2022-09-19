@@ -1,0 +1,21 @@
+{% extends "include/base.html" %}
+{% load static %}
+
+{% block title %}Orders{% endblock %}
+
+{% block header %}Orders{% endblock %}
+{% block content %}
+
+  {% for order in orders %}
+    <h3>
+        {{ order }}, Сумма заказа: {{ order.get_total_cost }}
+        {{ order.email }} 
+    </a>
+    </h3>
+    <p>{{ order.text|linebreaksbr }}</p>
+
+    {% if not forloop.last %}
+      <hr>{% endif %}
+  {% endfor %}
+
+{% endblock %}

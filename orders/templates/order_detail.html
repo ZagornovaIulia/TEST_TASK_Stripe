@@ -14,8 +14,8 @@
     <div class="container row">
       <div class="col-md-10">
         <h1>{{ order.name }}</h1>
-        <p>Description: {{ item.description }}</p>
-        <p>Price: {{ item.price }}</p>
+        <p>Description: {{ order.description }}</p>
+        <p>Price: {{ order.price }}</p>
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@
   var stripe = Stripe("{{ STRIPE_PUBLIC_KEY }}");
   var checkoutButton = document.getElementById("checkout-button");
   checkoutButton.addEventListener("click", function () {
-    fetch("{% url 'create-checkout-session' item.id %}", {
+    fetch("{% url 'create-checkout-session-order' item.id %}", {
       method: "GET",
       headers: {
         "X-CSRFToken": csrftoken,
