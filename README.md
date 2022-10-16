@@ -1,44 +1,53 @@
-# Тестовое задание с использованием Stripe ([Тех. задание](https://docs.google.com/document/d/1RqJhk-pRDuAk4pH1uqbY9-8uwAqEXB9eRQWLSMM_9sI/edit#))
-
-## Описание
-в данном проекте реализованы показ всех товаров (но в данном случает модель Item), и оплата каждого item:
-
-  ```GET http://localhost:8000/item/1``` - открывается item с id = 1, с возможностью оплаты
+# Test task using Stripe 
+### Description
+  In the implementation of the project, displays of all goods are implemented (but the Item model is implemented in the implementation), and payment for each product:
+  Cover orders with Item model
+  Added variables from .env file.
+  The admin-lite3 visual theme has been added to the admin panel.
+  Also added order models, applied cost calculation methods with calculation of the cost of each position
   
-  ```GET http://localhost:8000/items``` - открываются все items
-  
-  ```GET http://localhost:8000/buy/1``` -  session id
-  
-   ```GET http://localhost:8000/orders``` -  Все заказы
-   
-Заказы связаны с моделью Item
+---
 
-Добавлены переменные из .env файла. 
+### Technologies:
+* Python
+* Django
+* Pytest
+* Git
+* DRF
+* JWT
 
-В панеле администратора добавлена визуальная тема admin-lite3. 
+---
 
-Так же добавлены модели Order, реализованы методы подсчета стоимости заказа с подсчетом стоимости каждой позиции
+### Installation
+Clone the repository on the local machine:
 
-Проект был создан в учебных целях. Был использован стек:
-Python, Django, Git, Bootstrap, SQLite
+```$ git clone https://github.com/vkletkin/yatube-main```
 
-## Установка 
-Клонируем репозиторий на локальную машину:
-
-```$ git clone https://github.com/netshy/hw05_final```
-
- Создаем виртуальное окружение:
+ Create a virtual environment:
  
- ```$ python -m venv venv```  и активируем его  ```$ venv/Scripts/activate```
+ ```$ python -m venv venv```
  
- Устанавливаем зависимости:
+ Install dependencies:
 
 ```$ pip install -r requirements.txt```
 
-Создание и применение миграций:
+Creating and applying migrations:
 
-```$ python manage.py makemigrations``` и ```$ python manage.py migrate```
+```$ python manage.py makemigrations``` and  ```$ python manage.py migrate```
 
-Запускаем django сервер:
+Starting the django server:
 
 ```$ python manage.py runserver```
+
+---
+
+
+## URL examples
+
+```GET http://localhost:8000/item/1 - opens item with id = 1, with payment option
+  
+  GET http://localhost:8000/items - open all items
+  
+  GET http://localhost:8000/buy/1 - session id
+  
+  GET http://localhost:8000/orders - All orders```
